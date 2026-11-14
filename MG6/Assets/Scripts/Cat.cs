@@ -64,11 +64,18 @@ public class Cat : MonoBehaviour
         //      collider.
         // You might want to check the Rigidbody2D scripting documentation
         //      for a useful variable :)
-        
+        if (_rigidbody.linearVelocity.y > 0.0f)
+        {
+            _collider.enabled = false;
+        }
+        else
+        {
+            _collider.enabled = true;
+        }
 
-        
-        // STEP 1 -------------------------------------------------------------
-    }
+
+    // STEP 1 -------------------------------------------------------------
+}
 
     // ------------------------------------------------------------------------
     private void OnCollisionEnter2D(Collision2D collision)
